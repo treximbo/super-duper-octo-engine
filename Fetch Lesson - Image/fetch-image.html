@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Data/APIs 1</title>
+    </head>
+    <body>
+        <img src="" style="width: 100px; height: auto;" id="photo" />
+        <script>
+            // USING ASYNC AND AWAIT
+            async function catchPhoto() {
+                const response = await fetch('Blackbeard_pirate_skull.png');
+                const blob = await response.blob();
+                document.getElementById('photo').src = URL.createObjectURL(blob);
+            }
+            catchPhoto() // async function will return a promise which is why response can be defined
+                .then(response => {
+                    console.log('It worked');
+                })
+                .catch(err => {
+                    console.log('ERROR');
+                    console.error(err);
+                })
+            /*
+            fetch('Blackbeard_pirate_skull.png').then(response => {
+                console.log(response);
+                return response.blob();
+            }).then(blob =>{
+                console.log(blob);
+                document.getElementById('photo').src = URL.createObjectURL(blob);
+            })
+            .catch(err => {
+                console.log('error');
+                console.error(err);
+            }); 
+            */
+
+// THIS IS A TEST OF THE IMAGE FILE SCOPE 
+            /*
+            fetch('clout_pirate_anagram_logo_v1.png').then(response => {
+                console.log(response);
+                return response.blob();
+            }).then(blob =>{
+                console.log(blob);
+                document.getElementById('photo').src = URL.createObjectURL(blob);
+            });
+            */
+
+
+        </script>
+    </body>
+</html>

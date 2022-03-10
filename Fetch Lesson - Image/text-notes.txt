@@ -1,0 +1,9 @@
+1. fetch( PATH ) - async and there is a delay until the response 
+    - requires a promise (detail) about the fetch success prior to calling the response (there was an attempt)
+    
+2 response - 
+
+3 read and store this response data 
+    text - blob (image)
+
+4 complete data stream - grab body of the response
